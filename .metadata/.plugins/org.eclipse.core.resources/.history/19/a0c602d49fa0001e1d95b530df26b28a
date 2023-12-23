@@ -1,0 +1,17 @@
+/*
+ * PID_Init.h
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: win 10
+ */
+
+#ifndef PID_INIT_H_
+#define PID_INIT_H_
+
+typedef struct{
+	double Temp, TempSetpoint;
+	double speed;
+	double PIDOut,PWM;
+};
+
+#endif /* PID_INIT_H_ */

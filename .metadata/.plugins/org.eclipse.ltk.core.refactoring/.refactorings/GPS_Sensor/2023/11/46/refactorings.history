@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GPS_Sensor/GPS_Handle/GPS.C&apos; to &apos;GPS.c&apos;" description="Rename resource &apos;GPS.C&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="GPS_Handle/GPS.C" name="GPS.c" stamp="1699931561066" updateReferences="true"/>
+</session>

@@ -1,0 +1,10 @@
+13:21:12 **** Incremental Build of configuration Debug for project H_Bright ****
+make -j8 all 
+arm-none-eabi-size  H_Bright.elf 
+   text	   data	    bss	    dec	    hex	filename
+  35152	    488	   2128	  37768	   9388	H_Bright.elf
+Finished building: default.size.stdout
+ 
+
+13:21:13 Build Finished. 0 errors, 0 warnings. (took 421ms)
+

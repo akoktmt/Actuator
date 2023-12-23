@@ -1,0 +1,25 @@
+17:20:41 **** Incremental Build of configuration Debug for project testCAN ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:107:11: warning: unused variable 'Data' [-Wunused-variable]
+  107 |   uint8_t Data[5]={'H','E','L','L','O'};
+      |           ^~~~
+arm-none-eabi-gcc -o "testCAN.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\win 10\OneDrive\Desktop\Car\testCAN\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="testCAN.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: testCAN.elf
+ 
+arm-none-eabi-size  testCAN.elf 
+arm-none-eabi-objdump -h -S testCAN.elf  > "testCAN.list"
+arm-none-eabi-objcopy  -O binary testCAN.elf  "testCAN.bin"
+   text	   data	    bss	    dec	    hex	filename
+  11900	    100	   2012	  14012	   36bc	testCAN.elf
+Finished building: default.size.stdout
+ 
+Finished building: testCAN.bin
+ 
+Finished building: testCAN.list
+ 
+
+17:20:43 Build Finished. 0 errors, 1 warnings. (took 1s.681ms)
+

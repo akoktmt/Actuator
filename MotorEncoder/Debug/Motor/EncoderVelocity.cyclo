@@ -1,0 +1,4 @@
+../Motor/EncoderVelocity.c:11:6:Encoder_Init	1
+../Motor/EncoderVelocity.c:21:6:HAL_TIM_IC_CaptureCallback	5
+../Motor/EncoderVelocity.c:46:6:Encoder_CaculateSpeed	3
+../Motor/EncoderVelocity.c:65:7:Get_Speed	1

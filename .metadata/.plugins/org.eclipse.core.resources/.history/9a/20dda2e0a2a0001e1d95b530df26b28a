@@ -1,0 +1,24 @@
+/*
+ * PID_Init.c
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: win 10
+ */
+#include "PID_Init.h"
+#include "PID.h"
+void PID_Init(PID_Inittypedef *PID, double ){
+	PID->PIDOut=0;
+	PID->PWM=0;
+	PID->TPID=0;
+	PID->Temp=0;
+	PID->TempSetpoint=0;
+	PID->speed=0;
+}
+
+void PID_Setup(PID_Inittypedef *PID, double Kp , double Kp, double Kp){
+	 PID_Init(PID);
+	 PID(PID->TPID, PID->speed, PID->PIDOut, PID->TempSetpoint, Kp, Kp, Kp, _PID_P_ON_E, _PID_CD_DIRECT);
+	 PID_SetMode(PID->TPID, _PID_MODE_AUTOMATIC);
+	 PID_SetSampleTime(PID->TPID, 50);
+	 PID_SetOutputLimits(PID->TPID, -1, 1);
+}

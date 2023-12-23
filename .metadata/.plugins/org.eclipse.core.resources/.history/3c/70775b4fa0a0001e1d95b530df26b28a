@@ -1,0 +1,15 @@
+/*
+ * PID_Init.c
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: win 10
+ */
+
+
+void PID_Init(PID_Inittypedef *PID){
+
+	 PID(&TPID, &speed, &PIDOut, &TempSetpoint, 4, 0, 3, _PID_P_ON_E, _PID_CD_DIRECT);
+	 PID_SetMode(&TPID, _PID_MODE_AUTOMATIC);
+	 PID_SetSampleTime(&TPID, 50);
+	 PID_SetOutputLimits(&TPID, -1, 1);
+}

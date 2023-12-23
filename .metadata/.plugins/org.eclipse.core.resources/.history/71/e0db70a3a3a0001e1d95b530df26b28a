@@ -1,0 +1,20 @@
+/*
+ * PID_Init.h
+ *
+ *  Created on: Dec 22, 2023
+ *      Author: win 10
+ */
+
+#ifndef PID_INIT_H_
+#define PID_INIT_H_
+#include "main.h"
+#include "PID.h"
+typedef struct{
+	double Temp, TempSetpoint;
+	double speed;
+	double PIDOut,PWM;
+	PID_TypeDef TPID;
+}PID_Inittypedef;
+void PID_Init(PID_Inittypedef *PID);
+void PID_Setup(PID_Inittypedef *PID, double Kp , double Ki, double Kd, int8_t timesample,int8_t PosLimit,int8_t NeLimit,double *setpoint);
+#endif /* PID_INIT_H_ */

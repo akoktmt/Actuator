@@ -1,0 +1,46 @@
+08:37:29 **** Build of configuration Debug for project RPM_Encoder ****
+make -j8 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f411retx.d" -MT"Startup/startup_stm32f411retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f411retx.o" "../Startup/startup_stm32f411retx.s"
+arm-none-eabi-gcc "../Src/RPM_Encoder.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/RPM_Encoder.d" -MT"Src/RPM_Encoder.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/RPM_Encoder.o"
+arm-none-eabi-gcc "../Src/delay.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/delay.d" -MT"Src/delay.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/delay.o"
+arm-none-eabi-gcc "../Src/i2c.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/i2c.d" -MT"Src/i2c.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/i2c.o"
+arm-none-eabi-gcc "../Src/lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/lcd.d" -MT"Src/lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/lcd.o"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/stepper_motor.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/stepper_motor.d" -MT"Src/stepper_motor.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/stepper_motor.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+../Src/i2c.c: In function 'i2c_readByte':
+../Src/i2c.c:59:14: warning: variable 'tmp' set but not used [-Wunused-but-set-variable]
+   59 | volatile int tmp;
+      |              ^~~
+../Src/i2c.c: In function 'i2c_writeByte':
+../Src/i2c.c:84:14: warning: variable 'Temp' set but not used [-Wunused-but-set-variable]
+   84 | volatile int Temp;
+      |              ^~~~
+../Src/i2c.c: In function 'i2c_WriteMulti':
+../Src/i2c.c:105:14: warning: variable 'Temp' set but not used [-Wunused-but-set-variable]
+  105 | volatile int Temp;
+      |              ^~~~
+../Src/i2c.c: In function 'i2c_ReadMulti':
+../Src/i2c.c:125:22: warning: variable 'temp' set but not used [-Wunused-but-set-variable]
+  125 |         volatile int temp;
+      |                      ^~~~
+../Src/i2c.c: In function 'lcd_write_i2c':
+../Src/i2c.c:170:14: warning: variable 'Temp' set but not used [-Wunused-but-set-variable]
+  170 | volatile int Temp;
+      |              ^~~~
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+arm-none-eabi-gcc "../Src/uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32F411xE=STM32F411xE -c -I"D:/Resreach/RPM_Encoder/Inc" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Device/ST/STM32F4xx/Include" -I"D:/Resreach/RPM_Encoder/chip header/CMSIS/Include" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/uart.d" -MT"Src/uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/uart.o"
+arm-none-eabi-gcc -o "RPM_Encoder.elf" @"objects.list"   -mcpu=cortex-m4 -T"D:\Resreach\RPM_Encoder\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="RPM_Encoder.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: RPM_Encoder.elf
+ 
+arm-none-eabi-size  RPM_Encoder.elf 
+arm-none-eabi-objdump -h -S RPM_Encoder.elf  > "RPM_Encoder.list"
+   text	   data	    bss	    dec	    hex	filename
+  25888	    464	   1968	  28320	   6ea0	RPM_Encoder.elf
+Finished building: default.size.stdout
+ 
+Finished building: RPM_Encoder.list
+ 
+
+08:37:31 Build Finished. 0 errors, 5 warnings. (took 2s.269ms)
+

@@ -1,0 +1,4 @@
+../Motor_Driver/Motor_Driver.c:11:6:VNH3SP30_Init	16	static
+../Motor_Driver/Motor_Driver.c:17:6:VNH3SP30_SetSpeed	24	static
+../Motor_Driver/Motor_Driver.c:38:6:VNH3SP30_Brake	16	static
+../Motor_Driver/Motor_Driver.c:47:9:VNH3SP30_GetStatus	16	static

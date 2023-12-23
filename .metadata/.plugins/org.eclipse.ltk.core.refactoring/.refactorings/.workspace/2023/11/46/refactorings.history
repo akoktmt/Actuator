@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;F103_GPS_TUT&apos;" deleteContents="false" description="Delete resource &apos;F103_GPS_TUT&apos;" element1="/F103_GPS_TUT" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1699945249824"/>&#x0A;<refactoring comment="Delete resource &apos;CAN&apos;" deleteContents="false" description="Delete resource &apos;CAN&apos;" element1="/CAN" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1700206536840"/>
+</session>

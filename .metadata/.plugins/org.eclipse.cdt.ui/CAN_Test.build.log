@@ -1,0 +1,44 @@
+15:33:51 **** Incremental Build of configuration Debug for project CAN_Test ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/Resreach/CAN-main/CAN_Test/CANlibrary" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.d" -MT"Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_can.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/Resreach/CAN-main/CAN_Test/CANlibrary" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f1xx_hal_msp.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I"D:/Resreach/CAN-main/CAN_Test/CANlibrary" -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f1xx_hal_msp.d" -MT"Core/Src/stm32f1xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32f1xx_hal_msp.o"
+../Core/Src/main.c: In function 'tCANRec':
+../Core/Src/main.c:343:59: warning: passing argument 4 of 'CAN_Receive_Dataframe' from incompatible pointer type [-Wincompatible-pointer-types]
+  343 |         CAN_Receive_Dataframe(&MainCAN,&test1,Receivedata,&rcvLen);
+      |                                                           ^~~~~~~
+      |                                                           |
+      |                                                           uint8_t * {aka unsigned char *}
+In file included from ../Core/Src/main.c:26:
+D:/Resreach/CAN-main/CAN_Test/CANlibrary/canframe.h:62:122: note: expected 'uint32_t *' {aka 'long unsigned int *'} but argument is of type 'uint8_t *' {aka 'unsigned char *'}
+   62 | uint8_t CAN_Receive_Dataframe(CAN_HandlerStruct* Canhandle,CANConfigIDRxtypedef* pIDtype,uint8_t *ReceiveData, uint32_t *ReceiveLength);
+      |                                                                                                                ~~~~~~~~~~^~~~~~~~~~~~~
+../Core/Src/main.c: In function 'tMainTask':
+../Core/Src/main.c:393:65: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+  393 |           len = sprintf((char*)sendData, "From LIGHT_GPS to 2: %d\r\n",cnt++);
+      |                                                                ~^      ~~~~~
+      |                                                                 |         |
+      |                                                                 int       uint32_t {aka long unsigned int}
+      |                                                                %ld
+../Core/Src/main.c: In function 'tCANRec':
+../Core/Src/main.c:345:23: warning: '%s' directive writing up to 99 bytes into a region of size 76 [-Wformat-overflow=]
+  345 |         uint8_t len = sprintf(Print, "Node 2 Rcv: %s len %d \r\n", Receivedata, rcvLen);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:345:23: note: 'sprintf' output between 22 and 123 bytes into a destination of size 88
+arm-none-eabi-gcc -o "CAN_Test.elf" @"objects.list"   -mcpu=cortex-m3 -T"D:\Resreach\CAN-main\CAN_Test\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CAN_Test.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CAN_Test.elf
+ 
+arm-none-eabi-size  CAN_Test.elf 
+arm-none-eabi-objdump -h -S CAN_Test.elf  > "CAN_Test.list"
+arm-none-eabi-objcopy  -O binary CAN_Test.elf  "CAN_Test.bin"
+   text	   data	    bss	    dec	    hex	filename
+  23408	    104	   8504	  32016	   7d10	CAN_Test.elf
+Finished building: default.size.stdout
+ 
+Finished building: CAN_Test.bin
+ 
+Finished building: CAN_Test.list
+ 
+
+15:33:54 Build Finished. 0 errors, 3 warnings. (took 2s.341ms)
+

@@ -1,0 +1,19 @@
+18:21:59 **** Incremental Build of configuration Debug for project GPS_Sensor ****
+make -j8 all 
+arm-none-eabi-gcc -o "GPS_Sensor.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\win 10\OneDrive\Desktop\Car\GPS_Sensor\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPS_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPS_Sensor.elf
+ 
+arm-none-eabi-size  GPS_Sensor.elf 
+arm-none-eabi-objdump -h -S GPS_Sensor.elf  > "GPS_Sensor.list"
+arm-none-eabi-objcopy  -O binary GPS_Sensor.elf  "GPS_Sensor.bin"
+   text	   data	    bss	    dec	    hex	filename
+  47884	    496	   3152	  51532	   c94c	GPS_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: GPS_Sensor.bin
+ 
+Finished building: GPS_Sensor.list
+ 
+
+18:22:01 Build Finished. 0 errors, 0 warnings. (took 2s.299ms)
+

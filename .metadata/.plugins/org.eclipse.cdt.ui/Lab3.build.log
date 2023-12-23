@@ -1,0 +1,79 @@
+18:04:31 **** Incremental Build of configuration Debug for project Lab3 ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../isotp-c -I../TESTER -I../ECU -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:29:
+../ECU/ECU.h:31: warning: "SEREQUESTID" redefined
+   31 | #define SEREQUESTID 0x27
+      | 
+In file included from ../Core/Src/main.c:28:
+../TESTER/TESTER.h:26: note: this is the location of the previous definition
+   26 | #define SEREQUESTID 0X27
+      | 
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:149:16: warning: implicit declaration of function 'getRandomNumber' [-Wimplicit-function-declaration]
+  149 |   Seed.Seed_0 =getRandomNumber(0,4294967295);
+      |                ^~~~~~~~~~~~~~~
+../Core/Src/main.c:174:11: warning: variable 'Positive' set but not used [-Wunused-but-set-variable]
+  174 |   uint8_t Positive[2]={0};
+      |           ^~~~~~~~
+../Core/Src/main.c:173:11: warning: unused variable 'SeedOk' [-Wunused-variable]
+  173 |   uint8_t SeedOk=0;
+      |           ^~~~~~
+../Core/Src/main.c:172:11: warning: unused variable 'KeyOK' [-Wunused-variable]
+  172 |   uint8_t KeyOK=0;
+      |           ^~~~~
+../Core/Src/main.c:171:12: warning: unused variable 'ECUsizebuf' [-Wunused-variable]
+  171 |   uint16_t ECUsizebuf=6;
+      |            ^~~~~~~~~~
+../Core/Src/main.c:165:8: warning: unused variable 'msg' [-Wunused-variable]
+  165 |   char msg[50];
+      |        ^~~
+../Core/Src/main.c:153:11: warning: variable 'ECU_ResponseSeed' set but not used [-Wunused-but-set-variable]
+  153 |   uint8_t ECU_ResponseSeed[6]={0};
+      |           ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:145:50: warning: unused variable 'FourKeybuffOK' [-Wunused-variable]
+  145 |   uint8_t FIKeybuffOK,SEKeybuffOK,ThirdKeybuffOK,FourKeybuffOK=0;
+      |                                                  ^~~~~~~~~~~~~
+../Core/Src/main.c:145:35: warning: unused variable 'ThirdKeybuffOK' [-Wunused-variable]
+  145 |   uint8_t FIKeybuffOK,SEKeybuffOK,ThirdKeybuffOK,FourKeybuffOK=0;
+      |                                   ^~~~~~~~~~~~~~
+../Core/Src/main.c:145:23: warning: unused variable 'SEKeybuffOK' [-Wunused-variable]
+  145 |   uint8_t FIKeybuffOK,SEKeybuffOK,ThirdKeybuffOK,FourKeybuffOK=0;
+      |                       ^~~~~~~~~~~
+../Core/Src/main.c:145:11: warning: unused variable 'FIKeybuffOK' [-Wunused-variable]
+  145 |   uint8_t FIKeybuffOK,SEKeybuffOK,ThirdKeybuffOK,FourKeybuffOK=0;
+      |           ^~~~~~~~~~~
+../Core/Src/main.c:144:44: warning: unused variable 'FourKeybuff' [-Wunused-variable]
+  144 |   uint8_t FIKeybuff,SEKeybuff,ThirdKeybuff,FourKeybuff=0;
+      |                                            ^~~~~~~~~~~
+../Core/Src/main.c:144:31: warning: unused variable 'ThirdKeybuff' [-Wunused-variable]
+  144 |   uint8_t FIKeybuff,SEKeybuff,ThirdKeybuff,FourKeybuff=0;
+      |                               ^~~~~~~~~~~~
+../Core/Src/main.c:144:21: warning: unused variable 'SEKeybuff' [-Wunused-variable]
+  144 |   uint8_t FIKeybuff,SEKeybuff,ThirdKeybuff,FourKeybuff=0;
+      |                     ^~~~~~~~~
+../Core/Src/main.c:144:11: warning: unused variable 'FIKeybuff' [-Wunused-variable]
+  144 |   uint8_t FIKeybuff,SEKeybuff,ThirdKeybuff,FourKeybuff=0;
+      |           ^~~~~~~~~
+../Core/Src/main.c:143:11: warning: unused variable 'FirstRequest' [-Wunused-variable]
+  143 |   uint8_t FirstRequest=0;
+      |           ^~~~~~~~~~~~
+arm-none-eabi-gcc -o "Lab3.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\win 10\OneDrive\Desktop\Lab3\Lab3\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Lab3.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+C:/ST/STM32CubeIDE_1.12.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/bin/ld.exe: C:/ST/STM32CubeIDE_1.12.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.11.3.rel1.win32_1.1.100.202309141235/tools/bin/../lib/gcc/arm-none-eabi/11.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(libc_a-gettimeofdayr.o): in function `_gettimeofday_r':
+(.text._gettimeofday_r+0xe): warning: _gettimeofday is not implemented and will always fail
+Finished building target: Lab3.elf
+ 
+arm-none-eabi-size  Lab3.elf 
+arm-none-eabi-objdump -h -S Lab3.elf  > "Lab3.list"
+arm-none-eabi-objcopy  -O binary Lab3.elf  "Lab3.bin"
+   text	   data	    bss	    dec	    hex	filename
+  18316	    112	   2192	  20620	   508c	Lab3.elf
+Finished building: default.size.stdout
+ 
+Finished building: Lab3.bin
+ 
+Finished building: Lab3.list
+ 
+
+18:04:32 Build Finished. 0 errors, 18 warnings. (took 1s.105ms)
+

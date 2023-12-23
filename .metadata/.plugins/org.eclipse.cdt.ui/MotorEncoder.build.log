@@ -1,0 +1,24 @@
+09:51:47 **** Incremental Build of configuration Debug for project MotorEncoder ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103xB -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -I../EncoderVelocity -I../Motor -I../Motor_Driver -I"../PID Control" -I../BNO -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 -I../CAN_Handle -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/freertos.o"
+In file included from ../Core/Src/freertos.c:32:
+../PID Control/PID.h:93: warning: ignoring '#pragma diag_suppress ' [-Wunknown-pragmas]
+   93 |         #pragma diag_suppress 177     /* Disable 'unused function' warning */
+      | 
+arm-none-eabi-gcc -o "MotorEncoder.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\win 10\OneDrive\Desktop\Car\MotorEncoder\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MotorEncoder.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MotorEncoder.elf
+ 
+arm-none-eabi-size  MotorEncoder.elf 
+arm-none-eabi-objdump -h -S MotorEncoder.elf  > "MotorEncoder.list"
+arm-none-eabi-objcopy  -O binary MotorEncoder.elf  "MotorEncoder.bin"
+   text	   data	    bss	    dec	    hex	filename
+  52560	    480	   9008	  62048	   f260	MotorEncoder.elf
+Finished building: default.size.stdout
+ 
+Finished building: MotorEncoder.bin
+ 
+Finished building: MotorEncoder.list
+ 
+
+09:51:50 Build Finished. 0 errors, 1 warnings. (took 2s.877ms)
+

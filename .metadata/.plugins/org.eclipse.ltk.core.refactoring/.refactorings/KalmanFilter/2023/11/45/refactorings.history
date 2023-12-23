@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;KalmanFilter/LKF.c&apos; to &apos;LKF&apos;" description="Rename resource &apos;LKF.c&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="LKF.c" name="LKF" stamp="1699711011668" updateReferences="true"/>
+</session>

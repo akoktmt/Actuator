@@ -1,0 +1,4 @@
+../Motor_Driver/Motor_Driver.c:11:6:VNH3SP30_Init	1
+../Motor_Driver/Motor_Driver.c:17:6:VNH3SP30_SetSpeed	6
+../Motor_Driver/Motor_Driver.c:38:6:VNH3SP30_Brake	1
+../Motor_Driver/Motor_Driver.c:47:9:VNH3SP30_GetStatus	1
